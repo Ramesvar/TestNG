@@ -1,15 +1,17 @@
-pipeline{
-    agent any
-    stages{
-        stage("build"){
-            steps{
-            sh "mvn test"
-            }
-        }
-        stage("Test"){
-            steps{
-            echo 'Testing'
-            }
-        }
+ipeline {
+  agent any
+  stages {
+    stage('Checkout Scm') {
+      steps {
+        git 'https://github.com/Ramesvar/TestNG.git'
+      }
     }
+
+    stage('Shell script 0') {
+      steps {
+        sh 'sh "mvn test"'
+      }
+    }
+
+  }
 }
