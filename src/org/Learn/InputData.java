@@ -19,7 +19,7 @@ public class InputData<E> {
 		HashMap<String, String> data = new HashMap();
 		data.put("UserName", "Ramesh122");
 		data.put("Password", "ram1231");
-		
+		data.put("Password1", "ram12319");
 		Object[][] obj  = new Object[1][1];
 		
 		obj[0][0] = data;
@@ -33,15 +33,19 @@ public class InputData<E> {
 		employees.add(new Employee(1,669917l,"rames"));
 		employees.add(new Employee(1,669917l,"rames1"));
 		Iterator<E> iterator = (Iterator<E>) employees.iterator();
+		List <String >s  = new ArrayList();
+		
+
 		return iterator;
 	
 	}
 	
-	@Test(dataProvider = "data")
+	
+	@Test(dataProvider = "data",groups= {"tes","ioo"})
 	public void testGetInputData(HashMap<String, String>strData) {
 		System.out.println(strData.get("UserName"));
 		System.out.println(strData.get("Password"));
-		
+		System.out.println(strData.get("Password1"));
 	}
 	
 	@DataProvider(name="BothData")
